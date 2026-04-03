@@ -8,7 +8,7 @@
 </head>
 <body style="display: flex;">
     <div>
-        <canvas id="desafio2"style="position: relative; height: 40vh; width: 40vw;"></canvas>
+        <canvas id="ctx"style="position: relative; height: 40vh; width: 40vw;"></canvas>
     </div>
 
 </body>
@@ -19,46 +19,28 @@
 /*DIVISÃO*/
 
 
-
-    const mes = [
-        'Janeiro',
-        'Fevereiro',
-        'Março',
-        'Abril',
-        'Maio',
-        'Junho',
-    ];
-
-    const data = {
-        labels: mes,
-        datasets: [{
-            label: 'Temperatura Média',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [22, 24, 27, 23, 20, 18],
-        },{
-            label: 'Umidade Média',
-            backgroundColor: 'rgb(0, 0, 255)',
-            borderColor: 'rgb(0, 0, 255)',
-            data: [90, 89, 93, 87, 88, 82],
-        }]
-    };
-
-    const config = {
-        type: 'bar',
-        data: data,
-        options: {}
-    };
-
-</script>
-
-
-<script>
-  
-    const myChart2 = new Chart(
-        document.getElementById('desafio2'),
-        config
-    );
+const mixedChart = new Chart(ctx, {
+   type: 'bar',
+   data: {
+       datasets: [{
+           label: 'Bar Dataset',
+           data: [10, 20, 30, 40],
+           // this dataset is drawn below
+           order: 2
+       }, {
+           label: 'Line Dataset',
+           data: [10, 10, 10, 10],
+           type: 'line',
+           // this dataset is drawn on top
+           order: 1
+       }],
+       labels: ['January', 'February', 'March', 'April']
+   },
+   options: options
+});
+ 
+ 
+ 
 
 </script>
 

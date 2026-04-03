@@ -1,59 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>desafio</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body style="display: flex;">
-    <div> 
+    <div>
         <canvas id="desafio" style="position: relative; height: 40vh; width: 40vw;"></canvas>
     </div>
     <div>
-        <canvas id="desafio2"style="position: relative; height: 40vh; width: 40vw;"></canvas>
+        <canvas id="desafio2" style="position: relative; height: 40vh; width: 40vw;"></canvas>
     </div>
 
 </body>
 <script>
-    const horario = [
-        '12:00',
-        '13:00',
-        '14:00',
-        '15:00',
-        '16:00',
-        '17:00',
-    ];
 
-    const data = {
-        labels: horario,
-        datasets: [{
-            label: 'umidade',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [80, 82, 80, 85, 80, 83],
-        },{
-            label: 'horario',
-            backgroundColor: 'rgb(0, 0, 255)',
-            borderColor: 'rgb(0, 0, 255)',
-            data: [30, 29, 28, 25, 22, 23],
-        }]
-    };
+      const ctx = document.getElementById('desafio');
 
-    const config = {
-        type: 'line',
-        data: data,
-        options: {}
-    };
-    const config2 = {
-        type: 'bar',
-        data: data,
-        options: {}
-    };
+    
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+      datasets: [{
+        label: '# of Votes',
+        data: [30, 29, 28, 25, 22,23 ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
 
 
-
-/*DIVISÃO*/
+    /*DIVISÃO*/
 
 
 
@@ -73,7 +62,7 @@
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
             data: [22, 24, 27, 23, 20, 18],
-        },{
+        }, {
             label: 'Umidade Média',
             backgroundColor: 'rgb(0, 0, 255)',
             borderColor: 'rgb(0, 0, 255)',
@@ -91,10 +80,7 @@
 
 
 <script>
-    const myChart = new Chart(
-        document.getElementById('desafio'),
-        config
-    );
+   
     const myChart2 = new Chart(
         document.getElementById('desafio2'),
         configura
