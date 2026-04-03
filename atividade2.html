@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desafio</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body style="display: flex;">
+    <div>
+        <canvas id="desafio2"style="position: relative; height: 40vh; width: 40vw;"></canvas>
+    </div>
+
+</body>
+<script>
+    
+
+    
+/*DIVISÃO*/
+
+
+
+    const mes = [
+        'Janeiro',
+        'Fevereiro',
+        'Março',
+        'Abril',
+        'Maio',
+        'Junho',
+    ];
+
+    const data = {
+        labels: mes,
+        datasets: [{
+            label: 'Temperatura Média',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [22, 24, 27, 23, 20, 18],
+        },{
+            label: 'Umidade Média',
+            backgroundColor: 'rgb(0, 0, 255)',
+            borderColor: 'rgb(0, 0, 255)',
+            data: [90, 89, 93, 87, 88, 82],
+        }]
+    };
+
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {}
+    };
+
+</script>
+
+
+<script>
+  
+    const myChart2 = new Chart(
+        document.getElementById('desafio2'),
+        config
+    );
+
+</script>
+
+
+
+
+
+</html>
